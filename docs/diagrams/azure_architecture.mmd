@@ -1,0 +1,119 @@
+%%{init: {'flowchart': {'nodeSpacing': 60, 'rankSpacing': 100, 'htmlLabels': true}, 'themeVariables': {'fontSize': '16px'}} }%%
+graph TB
+    %% User Layer
+    User[👤 User<br/>Web/Mobile App]
+    
+    %% Entry Point
+    CDN[Azure CDN<br/>Static Content Delivery]
+    AppGateway[Azure Application Gateway<br/>+ WAF + Load Balancer]
+    APIM[Azure API Management<br/>Rate Limiting, Auth, Routing]
+    
+    %% Authentication
+    ADB2C[Azure AD B2C<br/>User Authentication]
+    
+    %% Compute Layer
+    AppService[Azure App Service<br/>Main API Backend<br/>Python/Node.js]
+    Functions[Azure Functions<br/>Background Processing<br/>Serverless]
+    
+    %% AI Services - Orchestrator
+    OpenAI[Azure OpenAI<br/>GPT-4<br/>Orchestrator Agent]
+    
+    %% AI Services - Specialized Agents
+    AIFoundry1[Azure AI Foundry<br/>m42-health-llama3<br/>Medical Q&A Agent]
+    AIFoundry2[Azure AI Foundry<br/>microsoft-biogpt<br/>Drug Info Agent]
+    AIFoundry3[Azure AI Foundry<br/>BiomedCLIP<br/>Image Agent]
+    DocIntel[Azure Document Intelligence<br/>OCR & Extraction<br/>Document Agent]
+    
+    %% RAG System
+    AISearch[Azure AI Search<br/>Vector Database<br/>RAG System]
+    
+    %% Storage Services
+    BlobStorage[Azure Blob Storage<br/>Documents & Images]
+    SQLDatabase[Azure SQL Database<br/>Users, Prescriptions, Drugs]
+    CosmosDB[Azure Cosmos DB<br/>Chat History NoSQL]
+    Redis[Azure Redis Cache<br/>Fast Caching]
+    
+    %% Security & Secrets
+    KeyVault[Azure Key Vault<br/>Secrets & Keys]
+    
+    %% Monitoring
+    AppInsights[Application Insights<br/>Monitoring & Analytics]
+    Monitor[Azure Monitor<br/>Alerts & Dashboards]
+    LogAnalytics[Log Analytics<br/>Centralized Logging]
+    
+    %% Communication
+    CommServices[Communication Services<br/>SMS/Email Notifications]
+    
+    %% Connections - User Flow
+    User -->|HTTPS| CDN
+    CDN --> AppGateway
+    AppGateway --> APIM
+    
+    %% API Management Routing
+    APIM -->|Auth Requests| ADB2C
+    APIM -->|API Calls| AppService
+    APIM -->|Background Jobs| Functions
+    
+    %% App Service Connections
+    AppService -->|Orchestration| OpenAI
+    AppService -->|Query Cache| Redis
+    AppService -->|Store/Retrieve| BlobStorage
+    AppService -->|Database Ops| SQLDatabase
+    AppService -->|Chat History| CosmosDB
+    AppService -->|Get Secrets| KeyVault
+    AppService -->|Telemetry| AppInsights
+    
+    %% Functions Connections
+    Functions -->|Process Docs| DocIntel
+    Functions -->|Upload Results| BlobStorage
+    Functions -->|Save Data| SQLDatabase
+    Functions -->|Send Alerts| CommServices
+    Functions -->|Get Secrets| KeyVault
+    
+    %% Orchestrator to Agents
+    OpenAI -->|Route Query| AIFoundry1
+    OpenAI -->|Route Query| AIFoundry2
+    OpenAI -->|Route Query| AIFoundry3
+    OpenAI -->|Route Query| DocIntel
+    
+    %% Agents to RAG
+    AIFoundry1 -->|Retrieve Context| AISearch
+    AIFoundry2 -->|Retrieve Context| AISearch
+    OpenAI -->|Retrieve Context| AISearch
+    
+    %% RAG to Knowledge Sources
+    AISearch -->|Index Documents| BlobStorage
+    AISearch -->|Query Drug Data| SQLDatabase
+    
+    %% Document Intelligence
+    DocIntel -->|Read Images| BlobStorage
+    DocIntel -->|Extract Text| AppService
+    
+    %% Monitoring Connections
+    AppService -.->|Logs| AppInsights
+    Functions -.->|Logs| AppInsights
+    OpenAI -.->|Metrics| AppInsights
+    AIFoundry1 -.->|Metrics| AppInsights
+    AIFoundry2 -.->|Metrics| AppInsights
+    AIFoundry3 -.->|Metrics| AppInsights
+    DocIntel -.->|Metrics| AppInsights
+    
+    AppInsights -->|Aggregate| Monitor
+    AppInsights -->|Store Logs| LogAnalytics
+    
+    %% Styling
+    classDef userLayer fill:#e1f5ff,stroke:#01579b,stroke-width:2px
+    classDef networkLayer fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef computeLayer fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef aiLayer fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef storageLayer fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    classDef securityLayer fill:#ffebee,stroke:#b71c1c,stroke-width:2px
+    classDef monitorLayer fill:#e0f2f1,stroke:#004d40,stroke-width:2px
+    
+    class User userLayer
+    class CDN,AppGateway,APIM,ADB2C networkLayer
+    class AppService,Functions computeLayer
+    class OpenAI,AIFoundry1,AIFoundry2,AIFoundry3,DocIntel,AISearch aiLayer
+    class BlobStorage,SQLDatabase,CosmosDB,Redis storageLayer
+    class KeyVault,CommServices securityLayer
+    class AppInsights,Monitor,LogAnalytics monitorLayer

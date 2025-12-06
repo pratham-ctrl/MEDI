@@ -1,0 +1,18 @@
+# Azure SDK packages (Required)
+openai>=1.0.0
+azure-storage-blob>=12.19.0
+azure-cosmos>=4.5.0
+redis>=5.0.0
+pyodbc>=5.0.0
+
+# Azure SDK packages (Optional - for Key Vault, Document Intelligence)
+azure-keyvault-secrets>=4.7.0
+azure-identity>=1.15.0
+azure-ai-formrecognizer>=3.3.0
+
+# HTTP requests
+requests>=2.31.0
+
+# Environment management
+python-dotenv>=1.0.0
+

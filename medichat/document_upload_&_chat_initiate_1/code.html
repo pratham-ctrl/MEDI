@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healthcare AI Chatbot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4A90E2",
+            "background-light": "#F4F4F4",
+            "background-dark": "#111718",
+            "success": "#50E3C2",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-screen">
+<aside class="w-64 bg-white dark:bg-[#181E1F] flex flex-col p-4 border-r border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="John Doe's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDk4oPMdZNcz9Y78fqxZTyLOw6Z7k-Q6Pm0i-G3sSPW3aCfj__m97ezhT4a9Mmz4OZAy2MaGjmOOR2PPJ1XgUtsrit-sUBciva2dziwcSS_GoxLi-2IvUjMD5wSppZCeGVJrGGXHPks-9jcm_-Kpyx-j4MOaH9nAlpWcSsq1N7VP1vZdwudfnLf5bz1gWZadly3_QvCpVx9qXCF6fNTrQGKlY65dE_ZOelMoK_vasvV7uSw_Yz3yOkCvXyHVXhFQJHzyr8WNybKCGk");'></div>
+<div class="flex flex-col">
+<h1 class="text-gray-800 dark:text-white text-base font-medium leading-normal">John Doe</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Patient</p>
+</div>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide mb-4">
+<span class="material-symbols-outlined mr-2">add</span>
+<span>New Chat</span>
+</button>
+<nav class="flex flex-col gap-1 flex-grow overflow-y-auto">
+<p class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider px-3 py-2">Today</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined text-base">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate">Follow-up on Cardiology Report</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-base">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate">Questions about lab results</p>
+</a>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider px-3 py-2 mt-4">Yesterday</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-base">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate">Medication side effects</p>
+</a>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider px-3 py-2 mt-4">Previous 7 Days</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-base">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate">General health query</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-base">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate">Appointment scheduling</p>
+</a>
+</nav>
+<div class="flex flex-col gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">upload</span>
+<p class="text-sm font-medium leading-normal">Upload</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">pill</span>
+<p class="text-sm font-medium leading-normal">Drug Lookup</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-sm font-medium leading-normal">Profile</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-screen max-h-screen bg-white dark:bg-gray-900/40">
+<header class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+<h2 class="text-lg font-semibold text-gray-900 dark:text-white">Follow-up on Cardiology Report</h2>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<div class="flex justify-center">
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-full text-sm">Today</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl shrink-0">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg rounded-tl-none max-w-lg">
+<p class="text-gray-800 dark:text-gray-200">Hello John. I've analyzed your cardiology report. What questions do you have for me?</p>
+</div>
+</div>
+<div class="flex items-start gap-4 justify-end">
+<div class="bg-primary p-4 rounded-lg rounded-br-none max-w-lg">
+<p class="text-white">What does "mild mitral regurgitation" mean? Is it serious?</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-center bg-no-repeat aspect-square bg-cover shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDk4oPMdZNcz9Y78fqxZTyLOw6Z7k-Q6Pm0i-G3sSPW3aCfj__m97ezhT4a9Mmz4OZAy2MaGjmOOR2PPJ1XgUtsrit-sUBciva2dziwcSS_GoxLi-2IvUjMD5wSppZCeGVJrGGXHPks-9jcm_-Kpyx-j4MOaH9nAlpWcSsq1N7VP1vZdwudfnLf5bz1gWZadly3_QvCpVx9qXCF6fNTrQGKlY65dE_ZOelMoK_vasvV7uSw_Yz3yOkCvXyHVXhFQJHzyr8WNybKCGk");'></div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl shrink-0">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg rounded-tl-none max-w-lg">
+<p class="text-gray-800 dark:text-gray-200">"Mild mitral regurgitation" means that one of the valves in your heart, the mitral valve, is letting a small amount of blood leak backward. In your case, it's classified as "mild," which is generally not considered serious. However, it's important to monitor it. The recommendation for a follow-up in 6 months is to ensure it doesn't progress.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl shrink-0">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg rounded-tl-none max-w-lg">
+<p class="text-gray-800 dark:text-gray-200">Is there anything else I can help you with regarding your report?</p>
+</div>
+</div>
+</div>
+<div class="p-4 bg-white dark:bg-gray-900/40 border-t border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-4">
+<textarea class="flex-1 bg-gray-100 dark:bg-gray-800 border-transparent focus:border-primary focus:ring-primary rounded-lg p-3 resize-none text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400" placeholder="Type your message..." rows="1"></textarea>
+<button class="bg-primary text-white rounded-lg p-3 flex items-center justify-center hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

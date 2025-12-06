@@ -1,0 +1,144 @@
+flowchart TB
+    %% User Layer
+    subgraph Users["👥 USER LAYER"]
+        WEB["🌐 Web Browser"]
+        MOBILE["📱 Mobile App"]
+        DESKTOP["💻 Desktop App"]
+        PWA["📲 Progressive Web App"]
+    end
+
+    %% CDN Layer
+    subgraph CDN["🌍 CONTENT DELIVERY LAYER"]
+        AZCDN["Azure CDN<br/>Global Edge Network<br/>Static Assets & Images"]
+    end
+
+    %% Security Layer
+    subgraph Security["🛡️ SECURITY & LOAD BALANCING LAYER"]
+        APPGW["Azure Application Gateway + WAF<br/>• OWASP Top 10 Protection<br/>• DDoS Protection<br/>• SSL Offloading"]
+    end
+
+    %% API Gateway
+    subgraph APIM_Layer["🚦 API GATEWAY LAYER"]
+        APIM["Azure API Management<br/>• Rate Limiting (100 req/min)<br/>• JWT Validation<br/>• Request Logging<br/>• Response Caching"]
+    end
+
+    %% Auth Service
+    subgraph Auth["🔐 AUTHENTICATION"]
+        ADB2C["Azure AD B2C<br/>• Multi-factor Auth<br/>• Social Login<br/>• JWT Tokens"]
+    end
+
+    %% Business Logic Layer
+    subgraph Business["⚙️ BUSINESS LOGIC LAYER"]
+        APPSERVICE["Azure App Service<br/>Python 3.11<br/>• REST API Endpoints<br/>• WebSocket Server<br/>• 2-10 Auto-scale Instances"]
+        
+        FUNCTIONS["Azure Functions<br/>Serverless Background Tasks<br/>• process-document-async<br/>• send-notifications<br/>• cleanup-old-data<br/>• generate-reports"]
+    end
+
+    %% AI Processing Layer
+    subgraph AI["🤖 AI & ML PROCESSING LAYER"]
+        ORCHESTRATOR["Orchestrator Agent<br/>Azure OpenAI GPT-4<br/>• Query Analysis<br/>• Agent Routing<br/>• Context Management"]
+        
+        DRUGAGENT["Drug Info Agent<br/>BioGPT<br/>• RAG Query<br/>• DB Search<br/>• Response Generation"]
+        
+        MEDAGENT["Medical Q&A Agent<br/>Med42-Llama3<br/>• RAG Retrieval<br/>• Context Analysis<br/>• Answer Generation"]
+        
+        RAG["RAG System<br/>Azure AI Search<br/>• Vector Search (1536D)<br/>• Cosine Similarity<br/>• Top-K Retrieval"]
+        
+        DOCAI["Document Intelligence<br/>• OCR Extraction<br/>• Layout Analysis<br/>• Custom Indian Rx Model"]
+        
+        BIOMEDCLIP["BiomedCLIP<br/>Image Analysis<br/>Medical Image Processing"]
+    end
+
+    %% Data Storage Layer
+    subgraph Storage["💾 DATA STORAGE LAYER"]
+        BLOB["Azure Blob Storage<br/>• Documents & Images<br/>• PDFs & Uploads<br/>• Hot Tier, LRS"]
+        
+        SQLDB["Azure SQL Database<br/>• Users & Profiles<br/>• Drug Database<br/>• Prescriptions<br/>S2 Standard, 250GB"]
+        
+        COSMOS["Azure Cosmos DB<br/>• Chat History<br/>• Conversations<br/>• Global Distribution<br/>400-4000 RU/s"]
+        
+        REDIS["Azure Redis Cache<br/>• Query Results (1h TTL)<br/>• Drug Info (7d TTL)<br/>• User Sessions (1h TTL)<br/>• RAG Results (6h TTL)<br/>Basic C1, 1GB"]
+    end
+
+    %% Security Services
+    subgraph SecServices["🔒 SECURITY SERVICES"]
+        KEYVAULT["Azure Key Vault<br/>• API Keys & Secrets<br/>• Connection Strings<br/>• Certificates<br/>• Auto-rotation<br/>HSM-backed"]
+        
+        IDENTITY["Managed Identities<br/>• App Service → Key Vault<br/>• Functions → Storage<br/>• Zero Stored Credentials"]
+    end
+
+    %% Monitoring Layer
+    subgraph Monitor["📊 MONITORING & OBSERVABILITY"]
+        APPINSIGHTS["Application Insights<br/>• Real-time Metrics<br/>• Distributed Tracing<br/>• Custom Events<br/>• Performance Analysis"]
+        
+        LOGANALYTICS["Log Analytics Workspace<br/>• Centralized Logging<br/>• KQL Queries<br/>• 90-day Retention"]
+        
+        AZMONITOR["Azure Monitor<br/>• Alert Rules<br/>• Dashboards<br/>• Cost Analysis<br/>• Resource Health"]
+        
+        COMMS["Communication Services<br/>• Email Notifications<br/>• SMS Alerts<br/>• Incident Response"]
+    end
+
+    %% Knowledge Sources
+    subgraph Knowledge["📚 KNOWLEDGE SOURCES"]
+        MEDICAL["Medical Knowledge<br/>• WHO Guidelines<br/>• ICMR Advisories<br/>• Research Papers"]
+        
+        DRUGDB["Drug Database<br/>• CDSCO Data<br/>• Interactions<br/>• Side Effects"]
+        
+        USERDOCS["User Documents<br/>• Prescriptions<br/>• Medical History"]
+    end
+
+    %% Main Flow Connections
+    WEB & MOBILE & DESKTOP & PWA -->|HTTPS TLS 1.3| AZCDN
+    AZCDN -->|Forwarded| APPGW
+    APPGW -->|WAF Filtered| APIM
+    APIM -->|Route to| ADB2C & APPSERVICE & FUNCTIONS
+    
+    %% Business Logic Connections
+    APPSERVICE -->|Orchestrate| ORCHESTRATOR
+    APPSERVICE -->|Query| SQLDB & COSMOS & REDIS & BLOB
+    FUNCTIONS -->|Blob Trigger| BLOB
+    FUNCTIONS -->|Process| DOCAI
+    
+    %% AI Flow
+    ORCHESTRATOR -->|Route to| DRUGAGENT & MEDAGENT
+    DRUGAGENT & MEDAGENT -->|Retrieve from| RAG
+    RAG -->|Search in| MEDICAL & DRUGDB & USERDOCS
+    APPSERVICE -->|OCR| DOCAI
+    APPSERVICE -->|Image Analysis| BIOMEDCLIP
+    
+    %% Security Connections
+    KEYVAULT -.->|Secure Access| APPSERVICE & FUNCTIONS
+    IDENTITY -.->|Authenticate| KEYVAULT
+    
+    %% Monitoring Connections
+    APPSERVICE & FUNCTIONS -->|Telemetry| APPINSIGHTS
+    APPINSIGHTS -->|Aggregate| LOGANALYTICS
+    LOGANALYTICS -->|Analyze| AZMONITOR
+    AZMONITOR -->|Notify| COMMS
+    
+    %% Cache Flow
+    APPSERVICE -->|Check Cache| REDIS
+    REDIS -.->|Cache Miss| ORCHESTRATOR
+    ORCHESTRATOR -.->|Cache Result| REDIS
+    
+    %% Document Processing Flow
+    BLOB -->|Trigger| FUNCTIONS
+    FUNCTIONS -->|Extract| DOCAI
+    DOCAI -->|Save to| SQLDB & BLOB
+    DOCAI -->|Index in| RAG
+
+    %% Styling
+    classDef userClass fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    classDef securityClass fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#000
+    classDef businessClass fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px,color:#000
+    classDef aiClass fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    classDef storageClass fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#000
+    classDef monitorClass fill:#e0f2f1,stroke:#004d40,stroke-width:2px,color:#000
+    
+    class WEB,MOBILE,DESKTOP,PWA userClass
+    class APPGW,ADB2C,KEYVAULT,IDENTITY securityClass
+    class APPSERVICE,FUNCTIONS,APIM businessClass
+    class ORCHESTRATOR,DRUGAGENT,MEDAGENT,RAG,DOCAI,BIOMEDCLIP aiClass
+    class BLOB,SQLDB,COSMOS,REDIS storageClass
+    class APPINSIGHTS,LOGANALYTICS,AZMONITOR,COMMS monitorClass
+

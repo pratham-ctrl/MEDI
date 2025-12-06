@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Secure Patient Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4A90E2", // Blue from user request
+                        "background-light": "#FFFFFF", // White from user request
+                        "background-dark": "#101f22", // Modified dark mode
+                        "accent-teal": "#50E3C2",
+                        "text-dark-gray": "#4A4A4A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-[#f6f8f8] dark:bg-[#111718] group/design-root overflow-x-hidden font-display" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col w-full max-w-md px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center justify-center py-12">
+<div class="flex flex-col items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary text-6xl">health_and_safety</span>
+<h1 class="text-3xl font-black text-gray-900 dark:text-white tracking-tight">Secure Patient Login</h1>
+<p class="text-base text-gray-600 dark:text-[#9db4b9]">Log in to your account to access our healthcare AI assistant.</p>
+</div>
+<div class="w-full flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-gray-700 dark:text-white" for="username">Username or Email</label>
+<input class="form-input w-full rounded-lg border-gray-300 dark:border-[#3b4f54] bg-white dark:bg-[#1c2527] h-12 px-4 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-[#9db4b9] focus:ring-primary focus:border-primary" id="username" placeholder="Enter your username or email" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-gray-700 dark:text-white" for="password">Password</label>
+<div class="relative flex items-center">
+<input class="form-input w-full rounded-lg border-gray-300 dark:border-[#3b4f54] bg-white dark:bg-[#1c2527] h-12 px-4 pr-10 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-[#9db4b9] focus:ring-primary focus:border-primary" id="password" placeholder="Enter your password" type="password"/>
+<span class="material-symbols-outlined absolute right-3 text-gray-400 dark:text-[#9db4b9] cursor-pointer">visibility_off</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<a class="text-sm text-accent-teal hover:underline" href="#">Forgot Password?</a>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg h-12 px-5 bg-primary text-white text-base font-bold tracking-wide hover:bg-primary/90 transition-colors">
+                        Login
+                    </button>
+</div>
+<div class="mt-8 text-center text-sm text-gray-600 dark:text-[#9db4b9]">
+<p>Don't have an account? <a class="font-medium text-accent-teal hover:underline" href="#">Register Now</a></p>
+</div>
+<div class="relative w-full my-8">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-300 dark:border-[#3b4f54]"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-[#f6f8f8] dark:bg-[#111718] px-2 text-sm text-gray-500 dark:text-[#9db4b9]">Or continue with</span>
+</div>
+</div>
+<div class="w-full flex flex-col gap-4">
+<button class="flex items-center justify-center w-full h-12 px-5 rounded-lg border border-gray-300 dark:border-[#3b4f54] bg-white dark:bg-[#1c2527] text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-[#2c3537] transition-colors">
+<img class="h-5 w-5 mr-3" data-alt="Google logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnZ2gnkn9N5o1J4Z4ewO60T2bUllXfBqJ9jDu3VM-Fiof3ZH_yUyhrKxNpz1_e4nO1ygcPeuD5kduVlwLqssoC6XrK-NQvvJh9H4PLWQC_f3zXrBtVEfykhPfP4qFrnR5O731ogaYgs5LJQ959J9XsRUuSUYCRYmOzbIlbcwHAJ3Zla2jyUhHvySPWfvv9CgVJNI5HB3iadsttVa6QzGArbiBnHtG1z44N5inm0RPsF3x7KFlsOOZQCwNXk5A9EL-rpt5QtxDCg3A"/>
+<span class="text-sm font-medium">Login with Google</span>
+</button>
+<button class="flex items-center justify-center w-full h-12 px-5 rounded-lg border border-gray-300 dark:border-[#3b4f54] bg-white dark:bg-[#1c2527] text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-[#2c3537] transition-colors">
+<img class="h-6 w-6 mr-3 dark:invert" data-alt="Apple logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtH9982tcYwqZdHpI-CTSNNl8K7wbat7A_Lg-GL0iOiTEvIeBALN5AbestJJKCf5DhFTVngESVZSddUWWyPjGlBa7KZiR6y7dYR2oEGyGV8p_q3NHSnQojryAUbFuE0GZ6WUA9c0bhabzWP39o1VOHPp21XYNs6QukN7AKjnBFM9EULBEk6_IXeNTgfZX6El4ihdAEzDF45UbME7nFS3QlA6JNPIP0X5iBBB2l7501D7eP8ZJyY6phZ7wSwzc70c23RLc2WMkXCnQ"/>
+<span class="text-sm font-medium">Login with Apple</span>
+</button>
+</div>
+<div class="mt-12 text-center text-xs text-gray-500 dark:text-[#9db4b9]">
+<a class="hover:underline" href="#">Privacy Policy</a>
+<span class="mx-2">•</span>
+<a class="hover:underline" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</div>
+</body></html>

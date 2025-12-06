@@ -1,0 +1,468 @@
+{
+  "timestamp": "2025-10-17T05:29:18.071044",
+  "summary": {
+    "total": 57,
+    "passed": 55,
+    "failed": 2,
+    "skipped": 0,
+    "success_rate": 96.49122807017544
+  },
+  "tests": [
+    {
+      "service": "Environment",
+      "test": "OPENAI_GPT_ENDPOINT",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233399"
+    },
+    {
+      "service": "Environment",
+      "test": "OPENAI_GPT_API_KEY",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233410"
+    },
+    {
+      "service": "Environment",
+      "test": "STORAGE_CONNECTION_STRING",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233418"
+    },
+    {
+      "service": "Environment",
+      "test": "SQL_CONNECTION_STRING_1",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233425"
+    },
+    {
+      "service": "Environment",
+      "test": "SQL_CONNECTION_STRING_2",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233432"
+    },
+    {
+      "service": "Environment",
+      "test": "SQL_CONNECTION_STRING_3",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233439"
+    },
+    {
+      "service": "Environment",
+      "test": "COSMOS_ENDPOINT",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233502"
+    },
+    {
+      "service": "Environment",
+      "test": "COSMOS_KEY",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233517"
+    },
+    {
+      "service": "Environment",
+      "test": "REDIS_CONNECTION_STRING",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233525"
+    },
+    {
+      "service": "Environment",
+      "test": "OPENAI_EMBEDDING_ENDPOINT",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233533"
+    },
+    {
+      "service": "Environment",
+      "test": "OPENAI_EMBEDDING_API_KEY",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233539"
+    },
+    {
+      "service": "Environment",
+      "test": "KEYVAULT_URL",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233545"
+    },
+    {
+      "service": "Environment",
+      "test": "DOCUMENT_INTELLIGENCE_ENDPOINT",
+      "status": "PASS",
+      "message": "\u2713 Set",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.233551"
+    },
+    {
+      "service": "Azure OpenAI (GPT)",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Endpoint: https://vansh-mgtnizvw-swedencentral.openai.azure.com",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.593759"
+    },
+    {
+      "service": "Azure OpenAI (GPT)",
+      "test": "Client Initialization",
+      "status": "PASS",
+      "message": "Client created successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:40.609352"
+    },
+    {
+      "service": "Azure OpenAI (GPT)",
+      "test": "Chat Completion API",
+      "status": "PASS",
+      "message": "Response: OK",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:42.246844"
+    },
+    {
+      "service": "Azure OpenAI (Embedding)",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Endpoint: https://vansh-mgtnizvw-swedencentral.openai.azure.com",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:42.247099"
+    },
+    {
+      "service": "Azure OpenAI (Embedding)",
+      "test": "Client Initialization",
+      "status": "PASS",
+      "message": "Client created successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:42.256361"
+    },
+    {
+      "service": "Azure OpenAI (Embedding)",
+      "test": "Embeddings API",
+      "status": "PASS",
+      "message": "Generated embedding with 1536 dimensions",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:43.453375"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Account: medchatbot111",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:43.631049"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "Client Initialization",
+      "status": "PASS",
+      "message": "Client created successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:43.631465"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "List Containers",
+      "status": "PASS",
+      "message": "Found 3 containers: extracted-data, medical-images, prescription-uploads",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:44.087931"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "Container: prescription-uploads",
+      "status": "PASS",
+      "message": "Container exists",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:44.087957"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "Container: extracted-data",
+      "status": "PASS",
+      "message": "Container exists",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:44.087967"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "Container: medical-images",
+      "status": "PASS",
+      "message": "Container exists",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:44.087976"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "Upload Test",
+      "status": "PASS",
+      "message": "Test file uploaded successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:44.194169"
+    },
+    {
+      "service": "Blob Storage",
+      "test": "Delete Test",
+      "status": "PASS",
+      "message": "Test file deleted successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:44.283825"
+    },
+    {
+      "service": "SQL Database 1",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Connection string found",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:44.290038"
+    },
+    {
+      "service": "SQL Database 1",
+      "test": "Database Connection",
+      "status": "PASS",
+      "message": "Connected successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:45.425583"
+    },
+    {
+      "service": "SQL Database 1",
+      "test": "Query Test",
+      "status": "PASS",
+      "message": "SQL Server version: Microsoft SQL Azure (RTM) - 12.0.2000.8 \n\tSep 16 2025 16:46:...",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:45.505904"
+    },
+    {
+      "service": "SQL Database 1",
+      "test": "List Tables",
+      "status": "PASS",
+      "message": "Database: medicalchatbot-users, No tables (new database)",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:45.665730"
+    },
+    {
+      "service": "SQL Database 2",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Connection string found",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:45.745844"
+    },
+    {
+      "service": "SQL Database 2",
+      "test": "Database Connection",
+      "status": "PASS",
+      "message": "Connected successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:46.643462"
+    },
+    {
+      "service": "SQL Database 2",
+      "test": "Query Test",
+      "status": "PASS",
+      "message": "SQL Server version: Microsoft SQL Azure (RTM) - 12.0.2000.8 \n\tSep 16 2025 16:46:...",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:46.717832"
+    },
+    {
+      "service": "SQL Database 2",
+      "test": "List Tables",
+      "status": "PASS",
+      "message": "Database: medicalchatbot-drugs, No tables (new database)",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:46.880677"
+    },
+    {
+      "service": "SQL Database 3",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Connection string found",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:46.966373"
+    },
+    {
+      "service": "SQL Database 3",
+      "test": "Database Connection",
+      "status": "PASS",
+      "message": "Connected successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:47.685646"
+    },
+    {
+      "service": "SQL Database 3",
+      "test": "Query Test",
+      "status": "PASS",
+      "message": "SQL Server version: Microsoft SQL Azure (RTM) - 12.0.2000.8 \n\tSep 16 2025 16:46:...",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:47.763084"
+    },
+    {
+      "service": "SQL Database 3",
+      "test": "List Tables",
+      "status": "PASS",
+      "message": "Database: medical-db, No tables (new database)",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:47.885644"
+    },
+    {
+      "service": "Cosmos DB",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Endpoint: https://medical-chatbot-cosmos.documents.azure.com:443/",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:47.985759"
+    },
+    {
+      "service": "Cosmos DB",
+      "test": "Client Initialization",
+      "status": "PASS",
+      "message": "Client created successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:48.582883"
+    },
+    {
+      "service": "Cosmos DB",
+      "test": "List Databases",
+      "status": "PASS",
+      "message": "Found 1 databases: medicalchatbot",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:49.145008"
+    },
+    {
+      "service": "Cosmos DB",
+      "test": "Database: medicalchatbot",
+      "status": "PASS",
+      "message": "Database exists",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:49.145069"
+    },
+    {
+      "service": "Cosmos DB",
+      "test": "List Containers",
+      "status": "PASS",
+      "message": "Found 2 containers: conversations, messages",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:49.256124"
+    },
+    {
+      "service": "Cosmos DB",
+      "test": "Container: conversations",
+      "status": "PASS",
+      "message": "Container exists",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:49.256169"
+    },
+    {
+      "service": "Cosmos DB",
+      "test": "Container: messages",
+      "status": "PASS",
+      "message": "Container exists",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:49.256189"
+    },
+    {
+      "service": "Redis Cache",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Connection string found",
+      "details": "",
+      "timestamp": "2025-10-17T05:28:49.289352"
+    },
+    {
+      "service": "Redis Cache",
+      "test": "Connection String Parse",
+      "status": "FAIL",
+      "message": "Failed to parse or connect: Timeout connecting to server",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:13.510920"
+    },
+    {
+      "service": "Key Vault",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Vault URL: https://medical-chatbot-kv.vault.azure.net/",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:13.563472"
+    },
+    {
+      "service": "Key Vault",
+      "test": "Client Initialization",
+      "status": "PASS",
+      "message": "Client created successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:13.564766"
+    },
+    {
+      "service": "Key Vault",
+      "test": "List Secrets",
+      "status": "PASS",
+      "message": "Found 16 secrets: ai-search-endpoint, ai-search-key, cosmos-connection-strings, document-intelligence-endpoint, document-intelligence-key, medical-db, medicalchatbot-drugs, medicalchatbot-users, OPENAI-API, openai-gpt4-sweden-endpoint",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:16.203913"
+    },
+    {
+      "service": "Document Intelligence",
+      "test": "Configuration Check",
+      "status": "PASS",
+      "message": "Endpoint: https://medichat-di.cognitiveservices.azure.com/",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:16.257392"
+    },
+    {
+      "service": "Document Intelligence",
+      "test": "Client Initialization",
+      "status": "PASS",
+      "message": "Client created successfully",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:16.257843"
+    },
+    {
+      "service": "Document Intelligence",
+      "test": "Service Status",
+      "status": "PASS",
+      "message": "Service is accessible (full document analysis requires file upload)",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:16.257853"
+    },
+    {
+      "service": "Network",
+      "test": "Azure Portal Reachable",
+      "status": "PASS",
+      "message": "Status: 302",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:17.360722"
+    },
+    {
+      "service": "Network",
+      "test": "Azure OpenAI API Reachable",
+      "status": "FAIL",
+      "message": "HTTPSConnectionPool(host='api.openai.azure.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x127ca7710>: Failed to resolve 'api.openai.azure.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:17.363851"
+    },
+    {
+      "service": "Network",
+      "test": "Azure Storage Reachable",
+      "status": "PASS",
+      "message": "Status: 400",
+      "details": "",
+      "timestamp": "2025-10-17T05:29:18.070896"
+    }
+  ]
+}

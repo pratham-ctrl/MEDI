@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Health Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#A9CCE3",
+                        "secondary": "#F4F6F7",
+                        "accent": "#7DCEA0",
+                        "text-primary": "#34495E",
+                        "background-light": "#F4F6F7",
+                        "background-dark": "#111718",
+                    },
+                    fontFamily: {
+                        "display": ["Lato", "Roboto", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-screen">
+<div class="flex flex-col w-64 bg-white dark:bg-[#1C2A2D] shadow-lg">
+<div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700">
+<h1 class="text-2xl font-bold text-text-primary dark:text-white">HealthAI</h1>
+</div>
+<div class="flex flex-col flex-1 p-4 overflow-y-auto">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Profile picture of Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhA5tpmodjQgbuwrVmpakel2XP0NoM_ZWEutNG7QjOj7R7PnnBQkApsWj94qV888SBp0CjyKdw3wL1_6FHWIHMoegdCUPOvR4hkSAH7Bh2rPq-rYT-RgkrwaiJrSv0uswo5Er0pK34PqfIxJgcO8LKFuJCNsP7tcZHLGVUM6dPp346axvAOOuBWHfB4Dt66cV8YcE6oBbh3pSOLOEuCGN4M2XROz7F2iMAVOOsrG0D9kK46kA6psDpUHtByPVo4ttGeJPds8mPuwQ");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-primary dark:text-white text-base font-bold leading-normal">Jane Doe</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">jane.doe@email.com</p>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<p class="text-xs font-semibold tracking-wider text-gray-400 uppercase">Today</p>
+<a class="block p-2 text-sm rounded-lg text-text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-primary/20" href="#">Sore throat symptoms</a>
+<a class="block p-2 text-sm rounded-lg text-text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-primary/20" href="#">Medication side effects</a>
+<p class="pt-4 text-xs font-semibold tracking-wider text-gray-400 uppercase">Yesterday</p>
+<a class="block p-2 text-sm rounded-lg text-text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-primary/20" href="#">Blood pressure reading</a>
+<p class="pt-4 text-xs font-semibold tracking-wider text-gray-400 uppercase">Previous 7 days</p>
+<a class="block p-2 text-sm rounded-lg text-text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-primary/20" href="#">Follow-up questions</a>
+<a class="block p-2 text-sm rounded-lg text-text-primary dark:text-white hover:bg-primary/10 dark:hover:bg-primary/20" href="#">General wellness check</a>
+</div>
+</div>
+<div class="p-4 border-t border-gray-200 dark:border-gray-700">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-text-primary dark:text-white">dashboard</span>
+<p class="text-text-primary dark:text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-text-primary dark:text-white">upload_file</span>
+<p class="text-text-primary dark:text-white text-sm font-medium leading-normal">Upload</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-text-primary dark:text-white">pill</span>
+<p class="text-text-primary dark:text-white text-sm font-medium leading-normal">Drug Lookup</p>
+</a>
+</div>
+<div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+<button class="flex items-center justify-between w-full gap-3 px-3 py-2 rounded-lg bg-transparent text-text-primary dark:text-white" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-primary dark:text-white">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</div>
+<span class="material-symbols-outlined text-text-primary dark:text-white transition-transform duration-300 transform">expand_more</span>
+</button>
+<div class="pt-2 pl-6 mt-1 space-y-1 border-l border-gray-200 dark:border-gray-700 ml-4.5">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-text-primary dark:text-white">person</span>
+<p class="text-text-primary dark:text-white text-sm font-medium leading-normal">Profile</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-text-primary dark:text-white">logout</span>
+<p class="text-text-primary dark:text-white text-sm font-medium leading-normal">Logout</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-4xl mx-auto">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center mb-8">
+<div class="flex gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32" data-alt="Profile picture of Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOeHG8qIJlFWbA5Hc4TiRFiIpvOIw-6fYL3dI3vYhIilSuVaNtN-ovltVQ4Cw_RVt3KVcFfBI9ul-jbljGaS6NYzvqc74DF0inNL_KOOTObv5h09DJUmBMtHbaXPcXVS9T4ZeW_04qT7H2wgLN6wHVcGoUrxy495Hx_LBDPmKX0ltr4oLlndfMQDRuU3cp6LZvt-3DEeUAbxKgTCQl_igvwXQo0Kndf1mHZXtB5j0q7pHTQHPQsg-1jCaD6u-hGdTEl9I_vCGkAzE");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-text-primary dark:text-white text-3xl font-bold leading-tight">Jane Doe</p>
+<p class="text-gray-500 dark:text-gray-400 text-lg font-normal leading-normal">34, Female</p>
+</div>
+</div>
+<div class="flex w-full max-w-[480px] gap-3 @[480px]:w-auto">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gray-200 dark:bg-[#34495E] text-text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto">
+<span class="truncate">Edit Profile</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1C2A2D] rounded-xl shadow-md p-6">
+<h2 class="text-text-primary dark:text-white text-2xl font-bold leading-tight mb-6">Personal Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div class="flex flex-col gap-1">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium">Full Name</label>
+<input class="bg-secondary dark:bg-[#34495E] border-none rounded-lg p-3 text-text-primary dark:text-white" type="text" value="Jane Doe"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium">Date of Birth</label>
+<input class="bg-secondary dark:bg-[#34495E] border-none rounded-lg p-3 text-text-primary dark:text-white" type="date" value="1989-10-23"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium">Gender</label>
+<select class="bg-secondary dark:bg-[#34495E] border-none rounded-lg p-3 text-text-primary dark:text-white">
+<option>Female</option>
+<option>Male</option>
+<option>Other</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium">Contact Number</label>
+<input class="bg-secondary dark:bg-[#34495E] border-none rounded-lg p-3 text-text-primary dark:text-white" type="tel" value="555-123-4567"/>
+</div>
+<div class="flex flex-col gap-1 col-span-1 md:col-span-2">
+<label class="text-gray-500 dark:text-gray-400 text-sm font-medium">Emergency Contact</label>
+<input class="bg-secondary dark:bg-[#34495E] border-none rounded-lg p-3 text-text-primary dark:text-white" type="text" value="John Doe - 555-987-6543"/>
+</div>
+</div>
+<div class="flex justify-end mt-6">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-accent text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Save Changes</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1C2A2D] rounded-xl shadow-md p-6 mt-8">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-text-primary dark:text-white text-2xl font-bold leading-tight">Prescriptions</h2>
+<button class="flex items-center gap-2 min-w-[84px] max-w-[480px] cursor-pointer justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Add New</span>
+</button>
+</div>
+<div class="space-y-4">
+<div class="p-4 rounded-lg bg-secondary dark:bg-[#34495E] flex items-center justify-between">
+<div>
+<p class="font-bold text-text-primary dark:text-white">Lisinopril</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">10mg, once daily</p>
+</div>
+<div class="flex gap-2">
+<button class="text-text-primary dark:text-white"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-red-500"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-secondary dark:bg-[#34495E] flex items-center justify-between">
+<div>
+<p class="font-bold text-text-primary dark:text-white">Metformin</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">500mg, twice daily</p>
+</div>
+<div class="flex gap-2">
+<button class="text-text-primary dark:text-white"><span class="material-symbols-outlined">edit</span></button>
+<button class="text-red-500"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
